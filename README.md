@@ -4,5 +4,5 @@
     <li>Császár Zsolt</li>
     <li>Paksi Norbert</li>
     <li>Csonka László</li>
-    <li>PH</li>
+    <li>Véninger Gréta</li>
 </ul>
