@@ -5,5 +5,4 @@
     <li>Paksi Norbert</li>
     <li>Csonka László</li>
     <li>Véninger Gréta</li>
-    <li>hihi</li>
 </ul>
