@@ -12,12 +12,14 @@ import { fakeBackendProvider } from './_helpers';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './_components/home/home.component';
 import { LoginComponent } from './_components/login/login.component';
+import { DetailsComponent } from './_components/details/details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,

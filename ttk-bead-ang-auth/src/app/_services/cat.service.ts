@@ -23,8 +23,8 @@ export class CatService {
     return this.http.post<Cat[]>(this.apiUrl, {task: 'get', id: ''},httpOptions);
   }
   // getCatById
-  getCatByIdFromDatabase(id: number): Observable<Cat> {
-    return this.http.get<Cat>(`${this.apiUrl}/${id}`, httpOptions);
+  getCatByIdFromDatabase(cat: any): Observable<Cat> {
+    return this.http.post<Cat>(`${this.apiUrl}`, cat, httpOptions);
   }
 
   // Add Cat
@@ -33,11 +33,11 @@ export class CatService {
   }
   // Delete Cat
   deleteCatByIdFromDatabase(id: number): Observable<Cat> {
-    return this.http.delete<Cat>(`${this.apiUrl}/${id}`, httpOptions);
+    return this.http.post<Cat>(`${this.apiUrl}`, {id, task: 'delete'},httpOptions);
   }
   // Update Cat
   updateCatByIdToDatabase(Cat): Observable<Cat> {
-    return this.http.put<Cat>(`${this.apiUrl}/${Cat.id}`, Cat, httpOptions);
+    return this.http.post<Cat>(`${this.apiUrl}`, Cat, httpOptions);
   }
 
 }

@@ -1,0 +1,23 @@
+
+<mat-card *ngIf='cat' class="example-card" class="mx-auto" style="width: 60%">
+    <mat-card-content>
+        <h2 class="text-center mt-3">{{cat.name}} módosítása</h2>
+
+        <form [formGroup]='catForm' (ngSubmit)='updateCatToServer()' class="p-3">
+            <img src='{{cat.img}}' class="img-fluid" style="max-height: 250px; border-radius: 50%; margin: 0 auto; display: block" alt="">
+            <mat-form-field class="example-full-width">
+                <mat-label>Név</mat-label>
+                <input formControlName='name' matInput placeholder="Éhes cica" />
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Étel</mat-label>
+                <input formControlName='food' matInput placeholder="Whiskas" />
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Kép a cicáról</mat-label>
+                <input formControlName='img' matInput placeholder="http://..." />
+            </mat-form-field>
+            <button mat-button class="own-mat-button" type="submit">Módosítás</button>
+        </form>
+      </mat-card-content>
+</mat-card>

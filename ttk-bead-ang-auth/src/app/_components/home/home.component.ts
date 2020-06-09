@@ -14,7 +14,7 @@ import { CatService } from 'src/app/_services/cat.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  displayedColumns: string[] = ['position', 'name', 'img', 'food'];
+  displayedColumns: string[] = ['name', 'img', 'food', 'details', 'delete'];
   catSource: Cat[] = [];
   users: User[];
   // cats: Cat[];
@@ -62,5 +62,12 @@ export class HomeComponent implements OnInit {
       .subscribe(
         data => this.catSource = data
     )};
+
+    deleteCat(catId: number) {
+      console.log('Törlendő cica ID: ' + catId);
+      this.catService.deleteCatByIdFromDatabase(catId).subscribe(
+        () => this.getCats()
+      )
+    }
 
 }
