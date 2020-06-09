@@ -13,7 +13,7 @@ export class UserService {
     private http: HttpClient
   ) { }
 
-  getAll(): Observable<User[]> {
-    return this.http.get<User[]>(`${environment.apiUrl}/users`);
-  }
+  // getAll(): Observable<User[]> {
+  //   return this.http.get<User[]>(`${environment.apiUrl}/users`);
+  // }
 }

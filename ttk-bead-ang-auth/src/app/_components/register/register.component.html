@@ -1,6 +1,6 @@
 <div class="container mt-4">
-    <h2 class="text-center">Bejelentkezés</h2>
-    <form [formGroup]='loginForm' (ngSubmit)='onSubmit()' class="p-3">
+    <h2 class="text-center">Regisztráció</h2>
+    <form [formGroup]='form' (ngSubmit)='onSubmit()' class="p-3">
         <mat-form-field class="example-full-width">
             <mat-label>Felhasználónév</mat-label>
             <input formControlName='username' [ngClass]="{ 'is-invalid': submitted && f.username.errors }"  matInput />
@@ -10,7 +10,7 @@
         </mat-form-field>
         <mat-form-field class="example-full-width">
             <mat-label>Jelszó</mat-label>
-            <input formControlName='password' formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" matInput />
+            <input type="password" formControlName='password' formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" matInput />
             <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
                 <div *ngIf="f.password.errors.required">Jelszó szükséges!</div>
             </div>
@@ -18,10 +18,10 @@
         <div class="mx-auto">
             <button class="d-block mx-auto" [disabled]='loadingAnimation' mat-raised-button type="submit">
                 <span *ngIf="loadingAnimation" class="spinner-border spinner-border-sm "></span>    
-                Belépés
+                Regisztráció
             </button>
-            <button class="d-block mx-auto" mat-button routerLink='/register'>Regisztráció</button>
+            <button mat-button class="d-block mx-auto" (click)='goBack()'>Vissza</button>
             <div *ngIf='error' style="width: 80%; margin: 0 auto" class="alert alert-danger mt-3">{{error}}</div>
         </div>
     </form>
-</div>
+</div> 

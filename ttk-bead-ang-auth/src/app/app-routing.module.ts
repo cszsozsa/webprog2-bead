@@ -5,12 +5,13 @@ import { AuthGuard } from './_helpers';
 import { LoginComponent } from './_components/login/login.component';
 import { HttpClient } from '@angular/common/http';
 import { DetailsComponent } from './_components/details/details.component';
-
+import { RegisterComponent } from './_components/register/register.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'details/:id', component: DetailsComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
   { path: '**', redirectTo: '' }
 ];
 

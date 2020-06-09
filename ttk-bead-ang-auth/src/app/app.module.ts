@@ -13,13 +13,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './_components/home/home.component';
 import { LoginComponent } from './_components/login/login.component';
 import { DetailsComponent } from './_components/details/details.component';
+import { RegisterComponent } from './_components/register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    DetailsComponent
+    DetailsComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
