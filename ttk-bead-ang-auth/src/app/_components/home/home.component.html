@@ -1,0 +1,10 @@
+<div class="container">
+    <div *ngIf="users" class="card">
+        <h3 class="card-header">Sikeresen beléptél!</h3>
+        <div class="card-body">
+            <ul>
+                <li *ngFor='let user of users'> {{user.firstName}} - {{user.lastName}} </li>
+            </ul>
+        </div>
+    </div>
+</div>
