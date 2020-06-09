@@ -8,7 +8,6 @@ import { User } from './_models/user';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'AUTHpelda';
   loggedInUser: User;
 
   constructor(

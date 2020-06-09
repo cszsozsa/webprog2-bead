@@ -22,7 +22,7 @@ export class AuthenticationService {
     this.user = this.userSubject.asObservable();
    }
 
-  // Belepett felhasznalo lekerdezese
+  // Belépett felhasználó lekérdezése
   public get userValue(): User {
     return this.userSubject.value;
   }
@@ -30,11 +30,11 @@ export class AuthenticationService {
   login(username: string, password: string) {
     return this.http.post<any>(`${environment.apiUrl}/users/authenticate`, { username, password })
       .pipe(map( user => {
-        // A felhasznalo adatait eltarolni a local storage-ban, hogy oldalfrissiteskor ne leptessen ki
+        // "Titkosítás" :)
         user.authdata = window.btoa(username + ':' + password);
-        // A belepett felhasznalo eltarolasa a localStorage-ban
+        // A belépett felhasználó eltárolása localstorageban
         localStorage.setItem('user', JSON.stringify(user));
-        // userSubject ertesitse a feliratkozott metodusokat a belepett felhasznalorol
+        // userSubject értesítse a feliratkozott metódusokat a belépett felhasználóról
         this.userSubject.next(user);
         return user;
       }));
